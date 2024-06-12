@@ -1,0 +1,19 @@
+.postContainer{
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.postTitle{
+  color: var(--text-primary);
+  font-size: 20px;
+  text-align: center;
+}
+
+.postPicture {
+  width: 100%;
+}
+
+.postContent {
+  color: var(--text-secondary);
+}
