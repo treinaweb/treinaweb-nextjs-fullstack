@@ -4,6 +4,7 @@ import PostList from "../ui/components/PostList/PostList";
 import * as postRepository from '@/backend/repository/post.respository';
 
 export default async function Home() {
+  console.log('Server Component');
   const posts = await postRepository.obterTodos();
   return (
     <main>
