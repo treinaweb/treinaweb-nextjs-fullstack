@@ -22,3 +22,9 @@ export async function obterPorSlug(slug: string): Promise<Post> {
     });
     return post as Post;
 }
+
+export async function excluir(id: string): Promise<void> {
+    await db.post.delete({
+        where: { id },
+    });
+}

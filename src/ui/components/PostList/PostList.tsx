@@ -1,6 +1,7 @@
 import { Post } from '@/backend/model/post';
 import styles from './PostList.module.css';
 import Link from "next/link";
+import DeletePost from '../DeletePost/DeletePost';
 
 export default function PostList({ posts }: { posts: Post[] }) {
   return (
@@ -20,6 +21,9 @@ export function PostListItem({ post }: { post: Post }) {
         <h2 className={styles.postTitle}>{post.title}</h2>
         <p>{post.description}</p>
       </Link>
+      <div className={styles.postActions}>
+        <DeletePost id={post.id} />
+      </div>
     </li>
   )
 }
