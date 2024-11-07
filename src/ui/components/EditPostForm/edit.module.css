@@ -1,0 +1,25 @@
+.pageTitle {
+    text-align: center;
+  }
+  
+  .postForm {
+    width: 100%;
+    max-width: 40em;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .postForm > :where(input, div) {
+    min-height: 32px;
+    padding: 8px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 3px;
+  }
+  
+  .postContent {
+    min-height: 150px;
+    resize: vertical;
+    overflow: scroll;
+  }
