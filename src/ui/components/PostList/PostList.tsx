@@ -2,14 +2,23 @@ import { Post } from '@/backend/model/post';
 import styles from './PostList.module.css';
 import Link from "next/link";
 import DeletePost from '../DeletePost/DeletePost';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function PostList({ posts }: { posts: Post[] }) {
   return (
-    <ul className={styles.postList}>
+    <>
+      <ul className={styles.postList}>
       {posts.map((post) => {
-        return <PostListItem key={post.id} post={post} />
+        return <PostListItem key={post.id} post={post} />;
       })}
-    </ul>
+      </ul>
+      <div style={{ textAlign: 'center' }}>
+        <Link href={'/posts/publish'}>
+          <button>Nobvo Post</button>
+        </Link>
+      </div>
+    </>
   )
 }
 
@@ -23,6 +32,9 @@ export function PostListItem({ post }: { post: Post }) {
       </Link>
       <div className={styles.postActions}>
         <DeletePost id={post.id} />
+        <Link href={`posts/${post.slug}/edit`}>
+          <FontAwesomeIcon icon={faPenToSquare} style={{width: "15px", color: "#000"}}/>
+        </Link>
       </div>
     </li>
   )
